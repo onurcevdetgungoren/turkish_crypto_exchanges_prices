@@ -51,7 +51,7 @@ class _ParibuBodyState extends State<ParibuBody> {
                               elevation: 1,
                               child: Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 1 / 8,
+                                    MediaQuery.of(context).size.height * 1 / 12,
                                 //width: 30,
                                 child: Row(
                                   mainAxisAlignment:
@@ -108,61 +108,6 @@ class _ParibuBodyState extends State<ParibuBody> {
                                           children: [
                                             RichText(
                                               text: TextSpan(
-                                                  text: "Average: ",
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: _paribuViewModel
-                                                          .paribu[index].avg24Hr
-                                                          .toString(),
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                  text: "High: ",
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: _paribuViewModel
-                                                          .paribu[index]
-                                                          .high24Hr
-                                                          .toString(),
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                  text: "Low: ",
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: _paribuViewModel
-                                                          .paribu[index].low24Hr
-                                                          .toString(),
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
                                                   text: "Last: ",
                                                   style: DefaultTextStyle.of(
                                                           context)
@@ -188,7 +133,7 @@ class _ParibuBodyState extends State<ParibuBody> {
                                           const EdgeInsets.only(right: 8.0),
                                       child: Container(
                                         alignment: Alignment.centerRight,
-                                        width: 50,
+                                        width: 60,
                                         child: Text(
                                           _paribuViewModel
                                                   .paribu[index].percentChange

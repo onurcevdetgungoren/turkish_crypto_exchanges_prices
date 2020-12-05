@@ -67,52 +67,53 @@ class _HomePageState extends State<HomePage>
                 alignment: Alignment.bottomLeft,
                 child: Row(
                   children: [
-                    SizedBox(
-                      width: 13,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 2 / 10,
+                        child: Text(
+                          "Crypto App",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                     Expanded(
-                        child: Container(
-                      width: MediaQuery.of(context).size.width * 1 / 5,
-                      child: Text(
-                        "Crypto App",
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 8 / 10,
+                        child: TabBar(
+                            onTap: (int a) {
+                              //Current index
+                              if (a == 0) {
+                                _btcturkViewModel.getPricesViewModel();
+                              }
+                              if (a == 1) {
+                                _thodexViewModel.getPricesViewModel();
+                              }
+                              if (a == 2) {
+                                _paribuViewModel.getPricesViewModel();
+                              }
+                              if (a == 3) {
+                                _binanceViewModel.getPricesViewModel();
+                              } else {}
+                            },
+                            controller: tabController,
+                            tabs: [
+                              Tab(
+                                  child: Text("BtcTurk",
+                                      style: TextStyle(fontSize: 10))),
+                              Tab(
+                                  child: Text("Thodex",
+                                      style: TextStyle(fontSize: 10))),
+                              Tab(
+                                  child: Text("Paribu",
+                                      style: TextStyle(fontSize: 10))),
+                              Tab(
+                                  child: Text(
+                                "Binance",
+                                style: TextStyle(fontSize: 10),
+                              )),
+                            ]),
                       ),
-                    )),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 4 / 5,
-                      child: TabBar(
-                          onTap: (int a) {
-                            //Current index
-                            if (a == 0) {
-                              _btcturkViewModel.getPricesViewModel();
-                            }
-                            if (a == 1) {
-                              _thodexViewModel.getPricesViewModel();
-                            }
-                            if (a == 2) {
-                              _paribuViewModel.getPricesViewModel();
-                            }
-                            if (a == 3) {
-                              _binanceViewModel.getPricesViewModel();
-                            } else {}
-                          },
-                          controller: tabController,
-                          tabs: [
-                            Tab(
-                                child: Text("BtcTurk",
-                                    style: TextStyle(fontSize: 12))),
-                            Tab(
-                                child: Text("Thodex",
-                                    style: TextStyle(fontSize: 12))),
-                            Tab(
-                                child: Text("Paribu",
-                                    style: TextStyle(fontSize: 12))),
-                            Tab(
-                                child: Text(
-                              "Binance",
-                              style: TextStyle(fontSize: 12),
-                            )),
-                          ]),
                     ),
                   ],
                 ),

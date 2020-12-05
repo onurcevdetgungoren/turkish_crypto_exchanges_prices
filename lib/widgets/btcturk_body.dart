@@ -51,7 +51,7 @@ class _BtcturkBodyState extends State<BtcturkBody> {
                               elevation: 1,
                               child: Container(
                                 height:
-                                    MediaQuery.of(context).size.height * 1 / 8,
+                                    MediaQuery.of(context).size.height * 1 / 13,
                                 //width: 30,
                                 child: Row(
                                   mainAxisAlignment:
@@ -62,8 +62,8 @@ class _BtcturkBodyState extends State<BtcturkBody> {
                                         alignment: Alignment.centerLeft,
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                2 /
-                                                5,
+                                                1 /
+                                                3,
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -102,76 +102,13 @@ class _BtcturkBodyState extends State<BtcturkBody> {
                                         width:
                                             MediaQuery.of(context).size.width *
                                                 2 /
-                                                5,
+                                                3,
                                         child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            RichText(
-                                              text: TextSpan(
-                                                  text: "Average: ",
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: double.parse(
-                                                              _btcturkViewModel
-                                                                  .btcturk
-                                                                  .data[index]
-                                                                  .average
-                                                                  .toStringAsFixed(
-                                                                      2))
-                                                          .toStringAsFixed(2),
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                  text: "High: ",
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: _btcturkViewModel
-                                                          .btcturk
-                                                          .data[index]
-                                                          .high
-                                                          .toString(),
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                  text: "Low: ",
-                                                  style: DefaultTextStyle.of(
-                                                          context)
-                                                      .style,
-                                                  children: <TextSpan>[
-                                                    TextSpan(
-                                                      text: _btcturkViewModel
-                                                          .btcturk
-                                                          .data[index]
-                                                          .low
-                                                          .toString(),
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ),
                                             RichText(
                                               text: TextSpan(
                                                   text: "Last: ",
@@ -186,7 +123,6 @@ class _BtcturkBodyState extends State<BtcturkBody> {
                                                           .last
                                                           .toString(),
                                                       style: TextStyle(
-                                                          fontSize: 15,
                                                           fontWeight:
                                                               FontWeight.bold),
                                                     ),
@@ -201,14 +137,12 @@ class _BtcturkBodyState extends State<BtcturkBody> {
                                           const EdgeInsets.only(right: 8.0),
                                       child: Container(
                                         alignment: Alignment.centerRight,
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.7 /
-                                                3,
+                                        width: 60,
                                         child: Text(
-                                          _btcturkViewModel.btcturk.data[index]
-                                                  .dailyPercent
-                                                  .toString() +
+                                          double.parse(_btcturkViewModel.btcturk
+                                                      .data[index].dailyPercent
+                                                      .toString())
+                                                  .toStringAsFixed(1) +
                                               "%",
                                           style: TextStyle(
                                               color: double.parse(

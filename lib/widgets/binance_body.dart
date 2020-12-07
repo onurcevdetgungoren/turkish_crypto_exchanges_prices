@@ -105,41 +105,50 @@ class _BinanceBodyState extends State<BinanceBody> {
                                       ),
                                     ),
                                     Expanded(
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                1 /
-                                                4,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Container(
-                                              alignment: Alignment.centerRight,
-                                              child: RichText(
-                                                text: TextSpan(
-                                                    text: "Price: ",
-                                                    style: DefaultTextStyle.of(
-                                                            context)
-                                                        .style,
-                                                    children: <TextSpan>[
-                                                      TextSpan(
-                                                        text: _binanceViewModel
-                                                            .binance[index]
-                                                            .price
-                                                            .toString(),
-                                                        style: TextStyle(
-                                                            fontSize: 15,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      ),
-                                                    ]),
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 8.0),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              1 /
+                                              4,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Container(
+                                                alignment:
+                                                    Alignment.centerRight,
+                                                child: RichText(
+                                                  text: TextSpan(
+                                                      text: "Price: ",
+                                                      style:
+                                                          DefaultTextStyle.of(
+                                                                  context)
+                                                              .style,
+                                                      children: <TextSpan>[
+                                                        TextSpan(
+                                                          text:
+                                                              _binanceViewModel
+                                                                  .binance[
+                                                                      index]
+                                                                  .price
+                                                                  .toString(),
+                                                          style: TextStyle(
+                                                              fontSize: 15,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                      ]),
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
